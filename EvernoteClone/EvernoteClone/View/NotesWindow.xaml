@@ -52,17 +52,35 @@
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
                 <Button Content="Speech"
-                        Click="SpeechButton_Click"/>
-                <Button Name="BoldButton"
-                        Click="BoldButton_Click">
+                        Click="SpeechButton_ClickAsync"/>
+                <ToggleButton Name="BoldButton"
+                              Click="BoldButton_Click">
                     <TextBlock Text="B"
                                FontWeight="Bold"/>
-                </Button>
+                </ToggleButton>
+                <ToggleButton Name="ItalicButton"
+                              Click="ItalicButton_Click">
+                    <TextBlock Text="I"
+                               FontStyle="Italic"/>
+                </ToggleButton>
+                <ToggleButton Name="UnderlineButton"
+                              Click="UnderlineButton_Click">
+                    <TextBlock Text="U"
+                               TextDecorations="Underline"/>
+                </ToggleButton>
+                <ComboBox x:Name="FontFamilyComboBox"
+                          Width="100"
+                          SelectionChanged="FontFamilyComboBox_SelectionChanged"/>
+                <ComboBox x:Name="FontSizeComboBox"
+                          Width="50"
+                          IsEditable="True"
+                          TextBoxBase.TextChanged="FontSizeComboBox_TextChanged"/>
             </ToolBar>
         </ToolBarTray>
         <Grid>
             <RichTextBox x:Name="contentRichTextBox"
-                         TextChanged="ContentRichTextBox_TextChanged"/>
+                         TextChanged="ContentRichTextBox_TextChanged"
+                         SelectionChanged="ContentRichTextBox_SelectionChanged"/>
         </Grid>
     </DockPanel>
 </Window>

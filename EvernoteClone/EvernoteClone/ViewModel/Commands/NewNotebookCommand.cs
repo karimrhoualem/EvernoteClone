@@ -23,7 +23,7 @@ namespace EvernoteClone.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            VM.CreateNoteBook();
+            VM.CreateNotebook();
         }
     }
 }
